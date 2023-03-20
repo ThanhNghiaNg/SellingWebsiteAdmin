@@ -22,7 +22,6 @@ function App() {
   // Logout when user close browser
   useEffect(() => {
     sendRequest({ url: `${serverUrl}/authenticated` }, (data) => {
-      console.log(data);
       if (data.isLoggedIn !== true) {
         dispatch(authActions.logout());
       }

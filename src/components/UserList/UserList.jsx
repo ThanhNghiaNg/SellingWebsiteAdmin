@@ -31,7 +31,6 @@ function UserList(props) {
         url: `${serverUrl}/admin/users?page=${currentPage}&&pageSize=${pageSize}`,
       },
       (data) => {
-        console.log(data);
         setUsers(data.data);
         setNumResult(data.numResult);
       }

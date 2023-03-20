@@ -7,18 +7,18 @@ import { useState } from "react";
 function RoomList({ data }) {
   const [contact, setContact] = useState("");
   const listContent = data
-    .filter((item) => item._id.includes(contact))
+    .filter((item) => item.includes(contact))
     .map((item) => {
       return (
-        <li key={item._id} className="border-top border-bottom py-3">
+        <li key={item} className="border-top border-bottom py-3">
           <NavLink
-            to={`/chat/${item._id}`}
+            to={`/chat/${item}`}
             className={({ isActive }) => (isActive ? classes.active : "")}
           >
             <span className="me-0">
               <i className="fa-solid fa-user"></i>
             </span>
-            <span>{item._id}</span>
+            <span>{item}</span>
           </NavLink>
         </li>
       );

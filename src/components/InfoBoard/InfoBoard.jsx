@@ -4,7 +4,6 @@ import { addStyleCurrency } from "../../utils/global";
 import Card from "../UI/Card";
 
 function InfoBoard({ info }) {
-  console.log(info);
   return (
     <div className={classes.info}>
       <Card className={classes.info__item}>

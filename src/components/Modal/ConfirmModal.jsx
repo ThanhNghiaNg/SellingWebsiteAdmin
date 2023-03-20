@@ -18,7 +18,6 @@ function Modal(props) {
     event.preventDefault();
     props.onClose();
   };
-  console.log(props.message);
   return (
     <Backdrop>
       <form className={classes.modal} onSubmit={onConfirmHandler}>

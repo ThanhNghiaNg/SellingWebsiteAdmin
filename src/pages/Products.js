@@ -30,7 +30,6 @@ function Products(props) {
         url: `${serverUrl}/search-products?query=${query}&&page=${currentPage}&&pageSize=${pageSize}`,
       },
       (data) => {
-        console.log(data);
         setProducts(data.data);
         setNumResult(data.numResult);
       }

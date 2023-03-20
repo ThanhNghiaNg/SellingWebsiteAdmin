@@ -39,7 +39,6 @@ function ProductForm(props) {
     const formData = new FormData();
     if (!id) {
       for (let i = 0; i < image.length; i++) {
-        console.log(image[i]);
         formData.append("files", image[i]);
       }
     }
@@ -51,7 +50,6 @@ function ProductForm(props) {
     formData.append("price", price);
     formData.append("quantity", quantity);
 
-    console.log(formData);
     sendRequest(
       {
         url: `${serverUrl}/admin/product${id ? `/${id}` : ""}`,

@@ -51,7 +51,6 @@ function Room(props) {
     );
   };
   const conversationContent = roomData.map((mess, idx) => {
-    console.log(mess)
     if (mess.user.role === "admin" || mess.user.role === "consultant")
       return (
         <div className={classes["admin-message"]} key={idx}>
@@ -84,7 +83,7 @@ function Room(props) {
           }}
         />
         <button type="submit">
-          <i class="fa-regular fa-paper-plane"></i>
+          <i className="fa-regular fa-paper-plane"></i>
         </button>
       </form>
     </Card>
