@@ -12,12 +12,15 @@ function InfoBoard({ info }) {
           <p className="text-secondary">Clients</p>
         </div>
         <div className={classes.info__item__icon}>
-          <i class="fa-solid fa-user-plus text-secondary"></i>
+          <i className="fa-solid fa-user-plus text-secondary"></i>
         </div>
       </Card>
       <Card className={classes.info__item}>
         <div className={classes.info__item__value}>
-          <h4>{addStyleCurrency(info.monthEarning)}<sup>VNĐ</sup></h4>
+          <h4>
+            {addStyleCurrency(info.monthEarning)}
+            <sup>VNĐ</sup>
+          </h4>
           <p className="text-secondary">Earnings of Month</p>
         </div>
         <div className={classes.info__item__icon}>

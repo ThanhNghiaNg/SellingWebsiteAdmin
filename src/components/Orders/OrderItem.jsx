@@ -13,12 +13,13 @@ function OrderItem({ item }) {
       <td>{item.delivery}</td>
       <td>{item.status}</td>
       <td>
-        <Link
+        <a
           className="btn btn-success"
-          to={`${orderDetailBaseUrl}/${item._id}`}
+          href={`${orderDetailBaseUrl}/${item._id}`}
+          target="_blank"
         >
           View
-        </Link>
+        </a>
       </td>
     </tr>
   );
