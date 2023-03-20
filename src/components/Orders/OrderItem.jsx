@@ -1,5 +1,6 @@
 import React from "react";
-import { addStyleCurrency } from "../../utils/global";
+import { addStyleCurrency, orderDetailBaseUrl } from "../../utils/global";
+import { Link } from "react-router-dom";
 
 function OrderItem({ item }) {
   return (
@@ -12,7 +13,12 @@ function OrderItem({ item }) {
       <td>{item.delivery}</td>
       <td>{item.status}</td>
       <td>
-        <button className="btn btn-success">View</button>
+        <Link
+          className="btn btn-success"
+          to={`${orderDetailBaseUrl}/${item._id}`}
+        >
+          View
+        </Link>
       </td>
     </tr>
   );
