@@ -11,10 +11,15 @@ import { Pagination } from "antd";
 
 function UserList(props) {
   const [users, setUsers] = useState([]);
+  const [reload, setReload] = useState(false);
+  const { sendRequest, error, isLoading } = useHttp();
   const [currentPage, setCurrentPage] = useState(1);
   const [numResult, setNumResult] = useState(0);
-  const { sendRequest, error, isLoading } = useHttp();
-  const pageSize = 5;
+  const pageSize = 10;
+
+  const onReloadHandler = () => {
+    setReload((prev) => !prev);
+  };
 
   const changePageHandler = (values) => {
     setCurrentPage(values);
@@ -31,9 +36,9 @@ function UserList(props) {
         setNumResult(data.numResult);
       }
     );
-  }, [currentPage]);
+  }, [currentPage, reload]);
   const userListContent = users.map((user) => (
-    <UserItem key={user._id} user={user} />
+    <UserItem key={user._id} user={user} onReload={onReloadHandler} />
   ));
   return (
     <Card>
@@ -46,6 +51,7 @@ function UserList(props) {
             <td>Phone</td>
             <td>Address</td>
             <td>Role</td>
+            <td>Active</td>
             <td>Action</td>
           </tr>
         </thead>

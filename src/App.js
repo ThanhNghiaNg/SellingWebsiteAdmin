@@ -13,7 +13,6 @@ import { useEffect } from "react";
 import useHttp from "./hooks/useHttp";
 import { serverUrl } from "./utils/global";
 import Users from "./pages/Users";
-import Card from "./components/UI/Card";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);

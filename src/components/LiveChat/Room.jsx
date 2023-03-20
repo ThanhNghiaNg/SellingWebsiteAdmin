@@ -51,6 +51,7 @@ function Room(props) {
     );
   };
   const conversationContent = roomData.map((mess, idx) => {
+    console.log(mess)
     if (mess.user.role === "admin" || mess.user.role === "consultant")
       return (
         <div className={classes["admin-message"]} key={idx}>

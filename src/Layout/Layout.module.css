@@ -5,3 +5,43 @@
   background-color: var(--primary-background);
   height: 100%;
 }
+
+.layout__sidebar-toggle {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .layout {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .layout__sidebar {
+    display: flex;
+  }
+  .layout__sidebar-responsive {
+    opacity: 0;
+    width: 0;
+  }
+  .layout__sidebar-toggle {
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 0 3px #ccc;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    border: none;
+  }
+
+  .show {
+    opacity: 1;
+    width: fit-content;
+    transition: opacity ease-in-out 0.1s;
+  }
+  .float {
+    display: flex;
+    position: fixed;
+  }
+}

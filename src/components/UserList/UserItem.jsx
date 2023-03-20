@@ -3,6 +3,7 @@ import classes from "./UserItem.module.css";
 import React, { useState } from "react";
 import useHttp from "../../hooks/useHttp";
 import ConfirmModal from "../Modal/ConfirmModal";
+import { serverUrl } from "../../utils/global";
 
 function UserItem(props) {
   const user = props.user;
@@ -12,9 +13,15 @@ function UserItem(props) {
   const hideModalHandler = () => {
     setShowModal(false);
   };
-  
-  const deleteUserHandler = () => {
 
+  const deleteUserHandler = () => {
+    sendRequest(
+      { url: `${serverUrl}/admin/user/${user._id}`, method: "DELETE" },
+      (data) => {
+        props.onReload();
+        hideModalHandler();
+      }
+    );
   };
 
   return (
@@ -25,8 +32,14 @@ function UserItem(props) {
       <td>{user.phone}</td>
       <td>{user.address}</td>
       <td>{user.role}</td>
+      <td>{user.isActive ? "Yes" : "No"}</td>
       <td>
-        <button className="btn btn-outline-danger" onClick={deleteUserHandler}>
+        <button
+          className="btn btn-outline-danger"
+          onClick={() => {
+            setShowModal(true);
+          }}
+        >
           Delete
         </button>
       </td>

@@ -24,7 +24,7 @@ function RoomList({ data }) {
       );
     });
   return (
-    <Card>
+    <Card className={classes["room-list"]}>
       <div className="p-3 mb-3">
         <input
           className="form-control"
