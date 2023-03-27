@@ -19,10 +19,10 @@ function App() {
   const role = useSelector((state) => state.auth.role);
   const { sendRequest } = useHttp();
   const dispatch = useDispatch();
-  // Logout when user close browser
+  // Logout when expired session or unauthenticated
   useEffect(() => {
     sendRequest({ url: `${serverUrl}/authenticated` }, (data) => {
-      if (data.isLoggedIn !== true) {
+      if (data.isLoggedIn !== true || !data.isAdmin) {
         dispatch(authActions.logout());
       }
     });
