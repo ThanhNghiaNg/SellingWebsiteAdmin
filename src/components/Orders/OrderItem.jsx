@@ -12,7 +12,7 @@ function OrderItem({ item }) {
       <td>{addStyleCurrency(item.totalPrice)} </td>
       <td>{item.delivery}</td>
       <td>{item.status}</td>
-      <td>
+      {/* <td>
         <a
           className="btn btn-success"
           href={`${orderDetailBaseUrl}/${item._id}`}
@@ -20,7 +20,7 @@ function OrderItem({ item }) {
         >
           View
         </a>
-      </td>
+      </td> */}
     </tr>
   );
 }

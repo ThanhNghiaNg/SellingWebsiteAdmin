@@ -1,7 +1,7 @@
 // export const serverUrl = "http://localhost:5000";
 // export const orderDetailBaseUrl = "http://localhost:3000/order";
 export const serverUrl = "https://simple-e-commerce-server.onrender.com";
-export const orderDetailBaseUrl = "https://owwi-ecomerce.netlify.app/order"
+export const orderDetailBaseUrl = "https://owwi-ecomerce.netlify.app/order";
 
 // Function to add '.' after each 3 character to a string , make style currency
 export const addStyleCurrency = (price) => {

@@ -4,11 +4,15 @@ import React, { useState } from "react";
 import useHttp from "../../hooks/useHttp";
 import ConfirmModal from "../Modal/ConfirmModal";
 import { serverUrl } from "../../utils/global";
+import { authActions } from "../../store/authSlice";
+import {useDispatch, useSelector} from 'react-redux'
 
 function UserItem(props) {
   const user = props.user;
   const { sendRequest } = useHttp();
   const [showModal, setShowModal] = useState(false);
+  const id = useSelector(state=>state.auth.token)
+  const dispatch = useDispatch()
 
   const hideModalHandler = () => {
     setShowModal(false);
@@ -20,6 +24,9 @@ function UserItem(props) {
       (data) => {
         props.onReload();
         hideModalHandler();
+        if (id === user._id){
+          dispatch(authActions.logout())
+        }
       }
     );
   };

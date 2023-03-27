@@ -20,7 +20,7 @@ function Orders(props) {
             <th>Total</th>
             <th>Delivery</th>
             <th>Status</th>
-            <th>Detail</th>
+            {/* <th>Detail</th> */}
           </tr>
         </thead>
         <tbody>{tableBodyContent}</tbody>
